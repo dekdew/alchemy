@@ -53,18 +53,19 @@ export default {
 	methods: {
 		selectBottle: function (e) {
 			let min=0
-      let max=7
+      let max=5
 			let rnd = Math.floor(Math.random() * (+max - +min) + +min)
 			this.$emit('clicked', rnd)
 
+			this.bottle[e] = false
+
 			if (e == this.fakeBottle) {
-				alert('Nooooooo!')
-				location.reload()
+				this.$emit('clicked', 7)
+				// location.reload()
 			} else {
-				this.bottle[e] = false
 				if (this.next == 2) {
-					alert('Yessssss!')
-					location.reload()
+					this.$emit('clicked', 6)
+					// location.reload()
 				} else{
 					this.next++
 				}

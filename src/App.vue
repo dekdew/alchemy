@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      rnd: 0
+      rnd: 2
     }
   },
   methods: {

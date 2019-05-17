@@ -255,7 +255,7 @@ export default {
   ],
   data() {
     return {
-      hue: ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'monochrome']
+      hue: ['red', 'orange', 'green', 'blue', 'purple', 'pink', 'yellow', 'monochrome']
     }
   },
   watch: {
@@ -282,30 +282,6 @@ export default {
           hue: this.hue[rnd]
         })
       }
-      window.setInterval(function () {
-        let back = document.getElementsByClassName("st12")
-        let front = document.getElementsByClassName("st13")
-        let top = document.getElementsByClassName("st10")
-
-        top[0].style.fill = randomColor({
-          hue: this.hue[rnd]
-        })
-
-        for (let i = 0; i < back.length; i++) {
-          back[i].style.fill = randomColor({
-            luminosity: 'dark',
-            hue: this.hue[rnd]
-          })
-        }
-
-        for (let i = 0; i < front.length; i++) {
-          front[i].style.fill = randomColor({
-            luminosity: 'light',
-            hue: this.hue[rnd]
-          })
-        }
-
-      }, 1000)
     }
   },
   mounted() {
@@ -331,30 +307,6 @@ export default {
         hue: this.hue[rnd]
       })
     }
-    window.setInterval(function () {
-      let back = document.getElementsByClassName("st12")
-      let front = document.getElementsByClassName("st13")
-      let top = document.getElementsByClassName("st10")
-
-      top[0].style.fill = randomColor({
-        hue: this.hue[rnd]
-      })
-
-      for (let i = 0; i < back.length; i++) {
-        back[i].style.fill = randomColor({
-          luminosity: 'dark',
-          hue: this.hue[rnd]
-        })
-      }
-
-      for (let i = 0; i < front.length; i++) {
-        front[i].style.fill = randomColor({
-          luminosity: 'light',
-          hue: this.hue[rnd]
-        })
-      }
-
-    }, 1000)
   }
 }
 </script>
