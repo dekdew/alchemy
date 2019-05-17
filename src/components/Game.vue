@@ -52,6 +52,11 @@ export default {
 	},
 	methods: {
 		selectBottle: function (e) {
+			let min=0
+      let max=7
+			let rnd = Math.floor(Math.random() * (+max - +min) + +min)
+			this.$emit('clicked', rnd)
+
 			if (e == this.fakeBottle) {
 				alert('Nooooooo!')
 				location.reload()

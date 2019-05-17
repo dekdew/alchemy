@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <pot/>
-    <game/>
+    <pot :rnd="rnd"/>
+    <game @clicked="onClickChild"/>
   </div>
 </template>
 
@@ -13,8 +13,17 @@ export default {
   name: 'app',
   components: {
     Pot,
-    Game,
-    
+    Game
+  },
+  data() {
+    return {
+      rnd: 0
+    }
+  },
+  methods: {
+    onClickChild (value) {
+      this.rnd = value
+    }
   }
 }
 </script>

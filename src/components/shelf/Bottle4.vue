@@ -43,9 +43,38 @@
 <style scoped>
 .bottle {
 	position: fixed;
-  height: 20vh;
-  top: 40vh;
-	left: 67vh;
+	height: 20vh;
+	top: 40vh;
+	left: 65vh;
+	animation: text-shadow 1.5s ease-in-out infinite;
+	animation-delay: .1s;
+}
+
+@keyframes text-shadow {
+    0% {  
+        transform: translateY(0);
+		filter: drop-shadow(0 0 9px #333);
+    }
+
+    25% {  
+        transform: translateY(-0.5em);
+		filter: drop-shadow(0 0 9px #333);
+    }
+
+    50% {  
+        transform: translateY(0.5em);
+		filter: drop-shadow(0 0 18px #91bd09);
+    }
+    
+   75% {
+        transform: translateY(-0.25em);
+		filter: drop-shadow(0 0 9px #333);
+    }
+
+    100% {  
+        transform: translateY(0);
+		filter: drop-shadow(0 0 9px #333);
+    }
 }
 	
 .st0{fill:#4F9F00;}

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>{{ rnd }}</h1>
     <svg class="pot" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 200"
       style="enable-background:new 0 0 200 200;" xml:space="preserve">
@@ -246,9 +247,117 @@
 </template>
 
 <script>
-  export default {
-    name: 'pot'
+let randomColor = require('randomcolor'); // import the script
+
+export default {
+  name: 'pot',
+  props: [
+    'rnd'
+  ],
+  data() {
+    return {
+      hue: ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'monochrome']
+    }
+  },
+  watch: {
+    rnd: function (newValue, oldValue) {
+      let rnd = this.rnd
+      let back = document.getElementsByClassName("st12")
+      let front = document.getElementsByClassName("st13")
+      let top = document.getElementsByClassName("st10")
+
+      top[0].style.fill = randomColor({
+        hue: this.hue[rnd]
+      })
+
+      for (let i = 0; i < back.length; i++) {
+        back[i].style.fill = randomColor({
+          luminosity: 'dark',
+          hue: this.hue[rnd]
+        })
+      }
+
+      for (let i = 0; i < front.length; i++) {
+        front[i].style.fill = randomColor({
+          luminosity: 'light',
+          hue: this.hue[rnd]
+        })
+      }
+      window.setInterval(function () {
+        let back = document.getElementsByClassName("st12")
+        let front = document.getElementsByClassName("st13")
+        let top = document.getElementsByClassName("st10")
+
+        top[0].style.fill = randomColor({
+          hue: this.hue[rnd]
+        })
+
+        for (let i = 0; i < back.length; i++) {
+          back[i].style.fill = randomColor({
+            luminosity: 'dark',
+            hue: this.hue[rnd]
+          })
+        }
+
+        for (let i = 0; i < front.length; i++) {
+          front[i].style.fill = randomColor({
+            luminosity: 'light',
+            hue: this.hue[rnd]
+          })
+        }
+
+      }, 1000)
+    }
+  },
+  mounted() {
+    let rnd = this.rnd
+    let back = document.getElementsByClassName("st12")
+    let front = document.getElementsByClassName("st13")
+    let top = document.getElementsByClassName("st10")
+
+    top[0].style.fill = randomColor({
+      hue: this.hue[rnd]
+    })
+
+    for (let i = 0; i < back.length; i++) {
+      back[i].style.fill = randomColor({
+        luminosity: 'dark',
+        hue: this.hue[rnd]
+      })
+    }
+
+    for (let i = 0; i < front.length; i++) {
+      front[i].style.fill = randomColor({
+        luminosity: 'light',
+        hue: this.hue[rnd]
+      })
+    }
+    window.setInterval(function () {
+      let back = document.getElementsByClassName("st12")
+      let front = document.getElementsByClassName("st13")
+      let top = document.getElementsByClassName("st10")
+
+      top[0].style.fill = randomColor({
+        hue: this.hue[rnd]
+      })
+
+      for (let i = 0; i < back.length; i++) {
+        back[i].style.fill = randomColor({
+          luminosity: 'dark',
+          hue: this.hue[rnd]
+        })
+      }
+
+      for (let i = 0; i < front.length; i++) {
+        front[i].style.fill = randomColor({
+          luminosity: 'light',
+          hue: this.hue[rnd]
+        })
+      }
+
+    }, 1000)
   }
+}
 </script>
 
 <style scoped>
@@ -270,8 +379,8 @@
 	.st9{opacity:0.2;fill:url(#SVGID_6_);enable-background:new    ;}
 	.st10{fill:#D9E021;}
 	.st11{fill:url(#SVGID_7_);}
-	.st12{fill:#8bc34a;}
-	.st13{fill:#b2ff59;}
+	.st12{fill:#76ff03;transition: 1s;}
+	.st13{fill:#64dd17;transition: 1s;}
 	.st14{opacity:0.84;fill:#F1E4DC;enable-background:new    ;}
 	.st15{fill:url(#SVGID_8_);}
 	.st16{fill:url(#SVGID_9_);}
