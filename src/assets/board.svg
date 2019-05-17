@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 200 300" style="enable-background:new 0 0 200 300;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.65;fill:#BD6F95;}
+	.st1{fill:url(#SVGID_1_);}
+	.st2{fill:#006600;}
+	.st3{opacity:0.73;fill:#FFFFFF;}
+</style>
+<g>
+	<polygon class="st0" points="0,16.13 6.95,291.47 191.93,290.75 200,27.92 193.88,8.53 	"/>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="5.8251" y1="152.8338" x2="193.8807" y2="152.8338">
+		<stop  offset="0" style="stop-color:#822717"/>
+		<stop  offset="0.9946" style="stop-color:#700C26"/>
+	</linearGradient>
+	<polygon class="st1" points="5.83,20.9 18.45,287.49 183.8,286.4 193.88,18.18 	"/>
+	<polygon class="st2" points="30.76,278.21 170.97,279.75 181.81,29.49 23.06,29.32 	"/>
+	<polygon class="st0" points="30.76,278.21 33.46,277.86 30.4,35.11 170.67,39.53 168.89,279.72 170.97,279.75 181.81,29.49 
+		23.06,29.32 	"/>
+	<polygon class="st3" points="7.44,23.08 16.27,194.83 25.28,191.38 21.22,27.92 	"/>
+	<polygon class="st3" points="16.36,196.78 17.81,234.51 27,227.17 25.42,194.33 	"/>
+	<polygon class="st0" points="18.45,287.49 180.6,284.67 190.95,22.94 193.88,18.18 183.8,286.4 	"/>
+	<polygon class="st0" points="30.76,278.21 23.06,29.32 181.81,29.49 171.12,280.67 184.38,29.32 21.22,27.92 	"/>
+	<polygon class="st0" points="30.76,278.21 73.99,276.13 78.94,245.48 82.04,271.74 135.6,271.74 137.76,131.44 145.81,273.97 
+		170.97,279.75 	"/>
+</g>
+</svg>
