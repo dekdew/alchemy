@@ -1,14 +1,14 @@
 <template>
 	<div>
-		<board :multiple="multiple"/>
+		<board :multiple="multiple[next]"/>
 
-		<bottle1 @click.native="selectBottle(1)"/>
+		<bottle1 v-if="bottle[1]" @click.native="selectBottle(1)"/>
 
-		<bottle2 @click.native="selectBottle(2)"/>
+		<bottle2 v-if="bottle[2]" @click.native="selectBottle(2)"/>
 
-		<bottle3 @click.native="selectBottle(3)"/>
+		<bottle3 v-if="bottle[3]" @click.native="selectBottle(3)"/>
 
-		<bottle4 @click.native="selectBottle(4)"/>
+		<bottle4 v-if="bottle[4]" @click.native="selectBottle(4)"/>
 
 		<shelf/>
 	</div>
@@ -34,17 +34,36 @@ export default {
 	},
 	data() {
     return {
-			multiple: 1
+			multiple: [2, 3, 5],
+			next: 0,
+			fakeBottle: null,
+			bottle: {
+				1: true,
+				2: true,
+				3: true,
+				4: true
+			}
 		}
 	},
 	mounted() {
 		let min=1
     let max=4
-		let random = Math.floor(Math.random() * (+max - +min) + +min)
+		this.fakeBottle = Math.floor(Math.random() * (+max - +min) + +min)
 	},
 	methods: {
-		selectBottle: (e) => {
-			alert(e)
+		selectBottle: function (e) {
+			if (e == this.fakeBottle) {
+				alert('Nooooooo!')
+				location.reload()
+			} else {
+				this.bottle[e] = false
+				if (this.next == 2) {
+					alert('Yessssss!')
+					location.reload()
+				} else{
+					this.next++
+				}
+			}
 		}
 	}
 }
