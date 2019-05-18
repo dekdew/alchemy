@@ -62,9 +62,9 @@ export default {
 	},
 	methods: {
 		selectBottle: function (e) {
-			let audio = document.getElementById('clicked')
-			audio.currentTime=0
-			audio.play()
+			let audioClicked = document.getElementById('clicked')
+			audioClicked.currentTime=0
+			audioClicked.play()
 		
 			let min=0
       let max=5
@@ -79,10 +79,24 @@ export default {
 				this.coin = 0
 				this.next = 0
 				this.$emit('clicked', [7, this.next])
+
+				setTimeout(function(){
+					let audioMirror = document.getElementById('mirror-break')
+					audioMirror.currentTime=0
+					audioMirror.play()
+				}, 1000);
+
 				// location.reload()
 			} else {
+
+				setTimeout(function(){
+					let audioCoin = document.getElementById('coin')
+					audioCoin.currentTime=0
+					audioCoin.play()
+				}, 800);
+
 				this.next++
-					this.coin++
+				this.coin++
 				if (this.next == 4) {
 					this.end = true
 					this.$emit('clicked', [6, this.next])
