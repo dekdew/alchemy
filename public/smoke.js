@@ -97,6 +97,9 @@ const render = function () {
 
 // on DOM init
 function init() {
+  function onImageLoaded() {
+    build()
+  }
   canvas = document.getElementById('particles');
   stage = new createjs.Stage(canvas);
   canvas.width = cWidth;
