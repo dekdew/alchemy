@@ -42,7 +42,7 @@ export default {
 	},
 	data() {
     return {
-			multiple: [0, 2, 3, 5],
+			multiple: [0, 1, 2, 3, 5],
 			next: 1,
 			coin: 1,
 			fakeBottle: null,
@@ -81,14 +81,12 @@ export default {
 				this.$emit('clicked', [7, this.next])
 				// location.reload()
 			} else {
-				if (this.next == 3) {
+				this.next++
+					this.coin++
+				if (this.next == 4) {
 					this.end = true
 					this.$emit('clicked', [6, this.next])
-					this.coin++
 					// location.reload()
-				} else{
-					this.next++
-					this.coin++
 				}
 			}
 		}

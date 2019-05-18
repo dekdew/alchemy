@@ -256,9 +256,9 @@
             </g>
         </svg>
 
-        <img v-if="coin!=0" :src="getImgUrl(coin)" class="mirror">
+        <img :src="getImgUrl(coin)" class="mirror">
 
-        <svg class="mirror" x="0px" y="0px" viewBox="0 0 60 80">
+        <svg v-if="coin!=0" class="mirror" x="0px" y="0px" viewBox="0 0 60 80">
     <path class="st4" d="M42.86,44.25c-0.11,8.47-6.35,15.26-13.94,15.16c-4.11-0.05-7.77-2.12-10.24-5.35l0.79-1.33l4.1,0.05l0.08-5.98
 	l9.1-0.86l0.88,2.31l3.02-0.6l0.12-9.04l5.01-0.58C42.5,39.94,42.89,42.04,42.86,44.25z" />
         </svg>
@@ -289,7 +289,7 @@
 	.st1{fill:url(#MIRROR_1_);}
 	.st2{fill:url(#MIRROR_2_);}
 	.st3{fill:url(#MIRROR_3_);}
-	.st4{opacity:0.3;fill:#fff;}
+	.st4{opacity:0.2;fill:#797F9D;}
 	.st5{fill:url(#MIRROR_4_);}
 	.st6{fill:url(#MIRROR_5_);}
 	.st7{fill:url(#MIRROR_6_);}
@@ -300,7 +300,7 @@
 	.st12{fill:url(#MIRROR_11_)!important;}
 	.st13{fill:url(#MIRROR_12_)!important;}
 	.st14{fill:url(#MIRROR_13_);}
-	.st15{opacity:0.44;fill:#FFFFFF;}
+	.st15{opacity:0.44;fill:#FFFFFF!important;}
 	.st16{fill:url(#MIRROR_14_);}
 	.st17{fill:url(#MIRROR_15_);}
 	.st18{fill:url(#MIRROR_16_);}
