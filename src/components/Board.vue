@@ -53,7 +53,7 @@
 	position: fixed;
 	width: 35vh;
 	top: 5vh;
-	left: 60vw;
+	left: 26vw;
 }
 
 .st0 {

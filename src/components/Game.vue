@@ -2,7 +2,7 @@
 	<div>
 		<board :multiple="multiple[next]"/>
 
-		<shelf1/>
+		<mirror/>
 
 		<bottle1 v-if="bottle[1]" @click.native="selectBottle(1)"/>
 
@@ -25,6 +25,7 @@ import Shelf from './shelf/Shelf'
 import Shelf1 from './shelf/Shelf1'
 import Board from './Board'
 import Modal from './Modal'
+import Mirror from './Mirror'
 
 export default {
 	name: 'game',
@@ -36,7 +37,8 @@ export default {
 		Shelf,
 		Shelf1,
 		Board,
-		Modal
+		Modal,
+		Mirror
 	},
 	data() {
     return {

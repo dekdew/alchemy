@@ -316,7 +316,7 @@ export default {
   position: fixed;
   height: 50vh;
   bottom: 5vh;
-  left: 58vw;
+  left: 57vw;
   z-index: 1;
 }
 	.st0{fill:url(#SVGID_1_);}
