@@ -2,7 +2,7 @@
 	<div>
 		<board :multiple="multiple[next]"/>
 
-		<mirror/>
+		<mirror :coin="coin"/>
 
 		<bottle1 v-if="bottle[1]" @click.native="selectBottle(1)"/>
 
@@ -44,6 +44,7 @@ export default {
     return {
 			multiple: [2, 3, 5],
 			next: 0,
+			coin: 1,
 			fakeBottle: null,
 			bottle: {
 				1: true,
@@ -63,19 +64,25 @@ export default {
 			let min=0
       let max=5
 			let rnd = Math.floor(Math.random() * (+max - +min) + +min)
-			this.$emit('clicked', rnd)
+
+			console.log(this.oldRnd)
+			console.log(rnd)
+
+			this.$emit('clicked', [rnd, this.next])
 
 			this.bottle[e] = false
 
 			if (e == this.fakeBottle) {
-				this.$emit('clicked', 7)
+				this.coin = 0
+				this.$emit('clicked', [7, this.next])
 				// location.reload()
 			} else {
 				if (this.next == 2) {
-					this.$emit('clicked', 6)
+					this.$emit('clicked', [6, this.next])
 					// location.reload()
 				} else{
 					this.next++
+					this.coin++
 				}
 			}
 		}

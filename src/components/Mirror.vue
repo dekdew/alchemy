@@ -138,8 +138,6 @@
                     <path class="st15" d="M37,18.97c-0.6,0.99-1.93,1.42-1.93,1.42s-0.36-1.17,0.24-2.16c0.6-0.99,1.93-1.42,1.93-1.42
 		S37.6,17.98,37,18.97z" />
                 </g>
-                <path class="st4" d="M42.86,44.25c-0.11,8.47-6.35,15.26-13.94,15.16c-4.11-0.05-7.77-2.12-10.24-5.35l0.79-1.33l4.1,0.05l0.08-5.98
-	l9.1-0.86l0.88,2.31l3.02-0.6l0.12-9.04l5.01-0.58C42.5,39.94,42.89,42.04,42.86,44.25z" />
                 <path class="st15"
                     d="M12.65,37.66l-3.68-0.84c0,0,1.66-5.86,4.98-9.38l3.53,2.55C17.47,29.98,14.25,33.9,12.65,37.66z" />
                 <polygon class="st15" points="18,29.17 14.64,26.39 16.36,24.77 19.02,28.31 " />
@@ -257,12 +255,25 @@
                     d="M37.51,59.52l4.5,3.07c0,0,6.63-5.38,8.08-15.05c0,0-1.97,6.7-4.47,8.76l-3.9-1.3L37.51,59.52z" />
             </g>
         </svg>
+
+        <img v-if="coin!=0" :src="getImgUrl(coin)" class="mirror">
+
+        <svg class="mirror" x="0px" y="0px" viewBox="0 0 60 80">
+    <path class="st4" d="M42.86,44.25c-0.11,8.47-6.35,15.26-13.94,15.16c-4.11-0.05-7.77-2.12-10.24-5.35l0.79-1.33l4.1,0.05l0.08-5.98
+	l9.1-0.86l0.88,2.31l3.02-0.6l0.12-9.04l5.01-0.58C42.5,39.94,42.89,42.04,42.86,44.25z" />
+        </svg>
     </div>
 </template>
 
 <script>
   export default {
-	name: 'mirror',
+      name: 'mirror',
+      props: ['coin'],
+      methods: {
+          getImgUrl(coin) {
+              return require('../assets/coin'+coin+'.svg')
+          }
+      }
   }
 </script>
 
@@ -278,7 +289,7 @@
 	.st1{fill:url(#MIRROR_1_);}
 	.st2{fill:url(#MIRROR_2_);}
 	.st3{fill:url(#MIRROR_3_);}
-	.st4{opacity:0.44;fill:#797F9D;}
+	.st4{opacity:0.3;fill:#fff;}
 	.st5{fill:url(#MIRROR_4_);}
 	.st6{fill:url(#MIRROR_5_);}
 	.st7{fill:url(#MIRROR_6_);}
@@ -286,8 +297,8 @@
 	.st9{fill:url(#MIRROR_8_);}
 	.st10{fill:url(#MIRROR_9_);}
 	.st11{fill:url(#MIRROR_10_);}
-	.st12{fill:url(#MIRROR_11_);}
-	.st13{fill:url(#MIRROR_12_);}
+	.st12{fill:url(#MIRROR_11_)!important;}
+	.st13{fill:url(#MIRROR_12_)!important;}
 	.st14{fill:url(#MIRROR_13_);}
 	.st15{opacity:0.44;fill:#FFFFFF;}
 	.st16{fill:url(#MIRROR_14_);}

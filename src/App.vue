@@ -2,27 +2,32 @@
   <div id="app">
     <pot :rnd="rnd"/>
     <game @clicked="onClickChild"/>
+    <smoke :show="smoke"/>
   </div>
 </template>
 
 <script>
 import Pot from './components/Pot'
 import Game from './components/Game'
+import Smoke from './components/Smoke'
 
 export default {
   name: 'app',
   components: {
     Pot,
-    Game
+    Game,
+    Smoke
   },
   data() {
     return {
-      rnd: 2
+      rnd: 2,
+      smoke: null
     }
   },
   methods: {
     onClickChild (value) {
-      this.rnd = value
+      this.rnd = value[0]
+      this.smoke = value[1]
     }
   }
 }
