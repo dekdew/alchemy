@@ -1,5 +1,5 @@
 var canvas, ctx;
-const particleCount = 200;
+const particleCount = 650;
 let particles = [];
 const cWidth = 800;
 const cHeight = 600;

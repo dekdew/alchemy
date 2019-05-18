@@ -2,7 +2,7 @@
   <div id="app">
     <pot :rnd="rnd"/>
     <game @clicked="onClickChild"/>
-    <smoke :show="smoke"/>
+    <smoke :show="smoke" :rnd="rnd"/>
   </div>
 </template>
 

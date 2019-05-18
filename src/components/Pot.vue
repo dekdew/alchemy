@@ -246,7 +246,7 @@
 </template>
 
 <script>
-let randomColor = require('randomcolor'); // import the script
+let randomColor = require('randomcolor')
 
 export default {
   name: 'pot',
