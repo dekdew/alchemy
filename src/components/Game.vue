@@ -4,13 +4,13 @@
 
 		<mirror :coin="coin"/>
 
-		<bottle1 v-if="bottle[1]" @click.native="selectBottle(1)"/>
+		<bottle1 v-if="bottle[1]" :class="{'pointer-none': end}" @click.native="selectBottle(1)"/>
 
-		<bottle2 v-if="bottle[2]" @click.native="selectBottle(2)"/>
+		<bottle2 v-if="bottle[2]" :class="{'pointer-none': end}" @click.native="selectBottle(2)"/>
 
-		<bottle3 v-if="bottle[3]" @click.native="selectBottle(3)"/>
+		<bottle3 v-if="bottle[3]" :class="{'pointer-none': end}" @click.native="selectBottle(3)"/>
 
-		<bottle4 v-if="bottle[4]" @click.native="selectBottle(4)"/>
+		<bottle4 v-if="bottle[4]" :class="{'pointer-none': end}" @click.native="selectBottle(4)"/>
 
 		<shelf/>
 	</div>
@@ -42,8 +42,8 @@ export default {
 	},
 	data() {
     return {
-			multiple: [2, 3, 5],
-			next: 0,
+			multiple: [0, 2, 3, 5],
+			next: 1,
 			coin: 1,
 			fakeBottle: null,
 			bottle: {
@@ -51,7 +51,8 @@ export default {
 				2: true,
 				3: true,
 				4: true
-			}
+			},
+			end: false
 		}
 	},
 	mounted() {
@@ -74,12 +75,16 @@ export default {
 			this.bottle[e] = false
 
 			if (e == this.fakeBottle) {
+				this.end = true
 				this.coin = 0
+				this.next = 0
 				this.$emit('clicked', [7, this.next])
 				// location.reload()
 			} else {
-				if (this.next == 2) {
+				if (this.next == 3) {
+					this.end = true
 					this.$emit('clicked', [6, this.next])
+					this.coin++
 					// location.reload()
 				} else{
 					this.next++
@@ -92,5 +97,7 @@ export default {
 </script>
 
 <style scoped>
-
+.pointer-none {
+	pointer-events: none;
+}
 </style>
