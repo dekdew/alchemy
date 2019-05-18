@@ -259,7 +259,7 @@ export default {
     }
   },
   watch: {
-    rnd: function (newValue, oldValue) {
+    rnd: function () {
       let rnd = this.rnd
       let back = document.getElementsByClassName("st12")
       let front = document.getElementsByClassName("st13")
@@ -316,7 +316,8 @@ export default {
   position: fixed;
   height: 50vh;
   bottom: 5vh;
-  right: 25vh;
+  left: 58vw;
+  z-index: 1;
 }
 	.st0{fill:url(#SVGID_1_);}
 	.st1{fill:url(#SVGID_2_);}

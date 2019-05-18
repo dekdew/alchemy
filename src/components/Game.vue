@@ -2,6 +2,8 @@
 	<div>
 		<board :multiple="multiple[next]"/>
 
+		<shelf1/>
+
 		<bottle1 v-if="bottle[1]" @click.native="selectBottle(1)"/>
 
 		<bottle2 v-if="bottle[2]" @click.native="selectBottle(2)"/>
@@ -20,7 +22,9 @@ import Bottle2 from './shelf/Bottle2'
 import Bottle3 from './shelf/Bottle3'
 import Bottle4 from './shelf/Bottle4'
 import Shelf from './shelf/Shelf'
+import Shelf1 from './shelf/Shelf1'
 import Board from './Board'
+import Modal from './Modal'
 
 export default {
 	name: 'game',
@@ -30,7 +34,9 @@ export default {
 		Bottle3,
 		Bottle4,
 		Shelf,
-		Board
+		Shelf1,
+		Board,
+		Modal
 	},
 	data() {
     return {

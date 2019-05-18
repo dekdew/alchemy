@@ -33,7 +33,7 @@
 .shelf {
 	position: fixed;
 	width: 48vw;
-	top: 60vh;
+	top: 30vh;
 	left: 13vw;
 }
 

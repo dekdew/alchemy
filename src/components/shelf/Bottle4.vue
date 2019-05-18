@@ -45,7 +45,7 @@
 	position: fixed;
 	height: 20vh;
 	top: 40vh;
-	left: 65vh;
+	left: 45vw;
 	animation: text-shadow 1.5s ease-in-out infinite;
 	animation-delay: .1s;
 }

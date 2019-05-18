@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1 class="board text">X{{ multiple }}</h1>
+		<span class="board text">X{{ multiple }}</span>
 		<svg class="board" x="0px" y="0px" viewBox="0 0 200 300">
 			<g>
 				<polygon class="st0" points="0,16.13 6.95,291.47 191.93,290.75 200,27.92 193.88,8.53 	" />
@@ -45,7 +45,7 @@
 	text-align: center;
 	color: #fff;
 	z-index: 10;
-	top: 9.5vh !important;
+	top: 17vh !important;
 	font-size: 9vh;
 }
 
@@ -53,7 +53,7 @@
 	position: fixed;
 	width: 35vh;
 	top: 5vh;
-	left: 35vh;
+	left: 60vw;
 }
 
 .st0 {
@@ -66,7 +66,7 @@
 }
 
 .st2 {
-	fill: #006633;
+	fill: #005633;
 }
 
 .st3 {
