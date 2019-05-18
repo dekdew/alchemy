@@ -61,12 +61,13 @@ export default {
 	},
 	methods: {
 		selectBottle: function (e) {
+			let audio = document.getElementById('clicked')
+			audio.currentTime=0
+			audio.play()
+		
 			let min=0
       let max=5
 			let rnd = Math.floor(Math.random() * (+max - +min) + +min)
-
-			console.log(this.oldRnd)
-			console.log(rnd)
 
 			this.$emit('clicked', [rnd, this.next])
 

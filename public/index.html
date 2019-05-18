@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow: hidden;">
 
 <head>
   <meta charset="utf-8">
@@ -13,7 +13,7 @@
   <script src='smoke.js'></script>
 </head>
 
-<body style="overflow: hidden; margin: 0; font-family: 'Sriracha', cursive;">
+<body style=" margin: 0; font-family: 'Sriracha', cursive;">
   <noscript>
     <strong>We're sorry but alchemy doesn't work properly without JavaScript enabled. Please enable it to
       continue.</strong>
@@ -21,10 +21,9 @@
   <div id="app"></div>
   <!-- built files will be auto injected -->
 
-  <iframe allow="autoplay" id="audio" style="display:none"></iframe>
-  <audio id="player" autoplay loop>
-    <source src="./bg.mp3" type="audio/mp3">
-  </audio>
+  <iframe allow="autoplay" style="display:none"></iframe>
+  <audio src="./bg.mp3" autoplay loop volume="0.1"></audio>
+  <audio id="clicked" src="./clicked.mp3"></audio>
 </body>
 
 </html>
