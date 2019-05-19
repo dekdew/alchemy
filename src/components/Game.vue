@@ -2,7 +2,7 @@
 	<div>
 		<board :multiple="multiple[next]"/>
 
-		<mirror :coin="coin"/>
+		<mirror @clicked="onClickMirror" :coin="coin"/>
 
 		<bottle1 v-if="bottle[1]" :class="{'pointer-none': end}" @click.native="selectBottle(1)"/>
 
@@ -14,7 +14,7 @@
 
 		<shelf/>
 
-		<paper/>
+		<paper v-if="end" :msg="msg"/>
 
 	</div>
 </template>
@@ -53,7 +53,12 @@ export default {
 				3: true,
 				4: true
 			},
-			end: false
+			end: false,
+			msg: {
+				title: "WIN!!!",
+				multiple: 0,
+				delay: 1500
+			}
 		}
 	},
 	mounted() {
@@ -62,6 +67,11 @@ export default {
 		this.fakeBottle = Math.floor(Math.random() * (+max - +min) + +min)
 	},
 	methods: {
+		onClickMirror () {
+			this.end = true
+			this.msg.multiple = this.multiple[this.next]
+			this.msg.delay = 0
+    },
 		selectBottle: function (e) {
 			let audioClicked = document.getElementById('clicked')
 			audioClicked.currentTime=0
@@ -77,6 +87,7 @@ export default {
 
 			if (e == this.fakeBottle) {
 				this.end = true
+				this.msg.title = "LOSE!!!"
 				this.coin = 0
 				this.next = 0
 				this.$emit('clicked', [7, this.next])
@@ -104,6 +115,7 @@ export default {
 				this.coin++
 				if (this.next == 4) {
 					this.end = true
+					this.msg.multiple = 5
 					this.$emit('clicked', [6, this.next])
 					// location.reload()
 				}

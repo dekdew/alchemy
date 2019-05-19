@@ -1,7 +1,11 @@
 <template>
-    <div class="foo">
+    <div id="foo">
         <div class="center">
             <div class="paper main">
+                <div class="text">
+                    <h2>{{ msg.title }}</h2>
+                    <h1>X{{ msg.multiple }}</h1>
+                </div>
                 <svg x="0px" y="0px" viewBox="0 0 180 100">
                     <path class="st4" d="M29.8,9.2l2.7-1.6c0,0,13.9,4,21.4,3.7l1.1,4.3l2.1-3.5c0,0,20.9,2.4,29.2,1.1l-1.1,2.1l3.5,2.1l1.9,7.5
 			l2.1-12.3c0,0,20.9-1.3,36.1-5.4l2.4,2.9l1.6-3.7c0,0,12-1.9,14.2-2.4l4,1.6c0,0,10.7,54.1,4.3,83.3c0,0-26.2-2.4-31.6-1.9
@@ -63,17 +67,50 @@
 
 <script>
 export default {
-    name: 'paper'
-}
+    name: 'paper',
+        props: ['msg'],
+        mounted() {
+            let paper = document.getElementsByClassName('paper')
+            let foo = document.getElementById('foo')
+            setTimeout(function () {
+                for (let i = 0; i < paper.length; i++) {
+                    paper[i].classList.add("play");
+                }
+                foo.classList.add("foo1")
+            }, this.msg.delay);
+        }
+    }
 </script>
 
 <style scoped>
-.foo {
-    background-color: #0007;
+#foo {
     z-index: 9999;
     width: 100vw;
     height: 100vh;
     position: fixed;
+    opacity: 1;
+    transition: all 1s;
+}
+
+.foo1 {
+    background-color: #0007;
+}
+
+.text {
+    color: #4e342e;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text h1 {
+    font-size: 8em;
+}
+
+.text h2 {
+    font-size: 4em;
 }
 
 .center {
@@ -90,28 +127,34 @@ export default {
 .paper {
     grid-row-start: 1;
     grid-column-start: 1;
+    opacity: 0;
 }
 
 .left {
     transform: translateX(35%);
-    animation: go ease-in-out 1s forwards;
 }
 
 .right {
     transform: translateX(-35%);
-    animation: go ease-in-out 1s forwards;
 }
 
 .main {
     transform-origin: 50% 50%;
     transform: scale(0.2, 1);
+}
+
+.play {
     animation: go ease-in-out 1s forwards;
 }
 
 @keyframes go {
+    10% {
+        opacity: 1;
+    }
     to {
         transform: translateX(0);
         transform: scale(1);
+        opacity: 1;
     }
 }
 

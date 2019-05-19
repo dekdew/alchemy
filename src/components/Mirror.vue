@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div @click="stopGame">
         <svg class="mirror" x="0px" y="0px" viewBox="0 0 60 80">
             <g>
                 <path class="st0"
@@ -272,6 +272,9 @@
       methods: {
           getImgUrl(coin) {
               return require('../assets/coin'+coin+'.svg')
+          },
+          stopGame() {
+              this.$emit('clicked')
           }
       }
   }
