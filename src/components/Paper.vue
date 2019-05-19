@@ -1,5 +1,5 @@
 <template>
-    <div id="foo">
+    <div id="foo" @click="reload">
         <div class="center">
             <div class="paper main">
                 <div class="text">
@@ -68,18 +68,23 @@
 <script>
 export default {
     name: 'paper',
-        props: ['msg'],
-        mounted() {
-            let paper = document.getElementsByClassName('paper')
-            let foo = document.getElementById('foo')
-            setTimeout(function () {
-                for (let i = 0; i < paper.length; i++) {
-                    paper[i].classList.add("play");
-                }
-                foo.classList.add("foo1")
-            }, this.msg.delay);
+    props: ['msg'],
+    mounted() {
+        let paper = document.getElementsByClassName('paper')
+        let foo = document.getElementById('foo')
+        setTimeout(function () {
+            for (let i = 0; i < paper.length; i++) {
+                paper[i].classList.add("play");
+            }
+            foo.classList.add("foo1")
+        }, this.msg.delay);
+    },
+    methods: {
+        reload() {
+            location.reload()
         }
     }
+}
 </script>
 
 <style scoped>
@@ -106,7 +111,7 @@ export default {
 }
 
 .text h1 {
-    font-size: 8em;
+    font-size: 10em;
 }
 
 .text h2 {
