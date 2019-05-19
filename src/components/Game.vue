@@ -13,6 +13,9 @@
 		<bottle4 v-if="bottle[4]" :class="{'pointer-none': end}" @click.native="selectBottle(4)"/>
 
 		<shelf/>
+
+		<paper/>
+
 	</div>
 </template>
 
@@ -22,9 +25,8 @@ import Bottle2 from './shelf/Bottle2'
 import Bottle3 from './shelf/Bottle3'
 import Bottle4 from './shelf/Bottle4'
 import Shelf from './shelf/Shelf'
-import Shelf1 from './shelf/Shelf1'
 import Board from './Board'
-import Modal from './Modal'
+import Paper from './Paper'
 import Mirror from './Mirror'
 
 export default {
@@ -35,9 +37,8 @@ export default {
 		Bottle3,
 		Bottle4,
 		Shelf,
-		Shelf1,
 		Board,
-		Modal,
+		Paper,
 		Mirror
 	},
 	data() {
@@ -84,6 +85,10 @@ export default {
 					let audioMirror = document.getElementById('mirror-break')
 					audioMirror.currentTime=0
 					audioMirror.play()
+
+					let audioLose = document.getElementById('lose')
+					audioLose.currentTime=0
+					audioLose.play()
 				}, 1000);
 
 				// location.reload()
