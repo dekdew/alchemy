@@ -1,5 +1,5 @@
 <template>
-    <div id="foo" @click="reload">
+    <div id="foo" @click="rerenderPaper">
         <div class="center">
             <div class="paper main">
                 <div class="text">
@@ -69,6 +69,11 @@
 export default {
     name: 'paper',
     props: ['msg'],
+    data() {
+        return {
+            rerender: true
+        }
+    },
     mounted() {
         let paper = document.getElementsByClassName('paper')
         let foo = document.getElementById('foo')
@@ -80,9 +85,9 @@ export default {
         }, this.msg.delay);
     },
     methods: {
-        reload() {
-            location.reload()
-        }
+        rerenderPaper () {
+			this.$emit('rerender', this.rerender)
+		}
     }
 }
 </script>

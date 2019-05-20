@@ -1,7 +1,6 @@
 <template>
     <div class="smoke">
         <div id="flash" class="flash"></div>
-        <canvas id="particles"></canvas>
     </div>
 </template>
 
@@ -18,8 +17,6 @@ export default {
     },
     watch: {
         show: function () {
-            build()
-
             let rnd = this.rnd
             let flash = document.getElementById("flash");
             flash.style.backgroundImage = 'radial-gradient(circle at right,' + randomColor({
@@ -29,8 +26,6 @@ export default {
             flash.classList.remove("flash");
             void flash.offsetWidth;
             flash.classList.add("flash");
-
-
         }
     }
 }

@@ -14,7 +14,7 @@
 
 		<shelf/>
 
-		<paper v-if="end" :msg="msg"/>
+		<paper v-if="end" :msg="msg" @rerender="rerender"/>
 
 	</div>
 </template>
@@ -67,6 +67,9 @@ export default {
 		this.fakeBottle = Math.floor(Math.random() * (+max - +min) + +min)
 	},
 	methods: {
+		rerender (value) {
+			this.$emit('rerender', value)
+		},
 		onClickMirror () {
 			this.end = true
 			this.msg.multiple = this.multiple[this.next]

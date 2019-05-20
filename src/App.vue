@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div v-if="show" id="app">
     <pot :rnd="rnd"/>
-    <game @clicked="onClickChild"/>
+    <game @clicked="onClickChild" @rerender="rerender"/>
     <smoke :show="smoke" :rnd="rnd"/>
   </div>
 </template>
@@ -20,14 +20,24 @@ export default {
   },
   data() {
     return {
+      show: true,
       rnd: 2,
       smoke: null
     }
   },
   methods: {
-    onClickChild (value) {
+    onClickChild(value) {
       this.rnd = value[0]
       this.smoke = value[1]
+    },
+    rerender(value) {
+      if (value) {
+        this.show = false
+        this.$nextTick(() => {
+          this.show = true
+          this.$nextTick()
+        })
+      }
     }
   }
 }
